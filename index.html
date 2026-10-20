@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d1c">
+  <meta name="description" content="Minijuego educativo para reconocer señales visuales de daño en muros y aprender cuándo pedir una evaluación profesional.">
+  <title>Casa habitable — Minijuego didáctico</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Casa habitable, inicio" id="brandHome">
+      <span class="brand-mark" aria-hidden="true">⌂</span>
+      <span>CASA<span class="brand-light">/</span>SEGURA</span>
+    </a>
+    <div class="header-note"><span class="status-dot"></span> MINIJUEGO DIDÁCTICO</div>
+  </header>
+
+  <main id="app" class="app-shell">
+    <section id="screen-home" class="screen hero-screen" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-icon">↗</span> APRENDE A OBSERVAR</p>
+        <h1 id="hero-title">¿Casa habitable<br>o <span>peligro de colapso?</span></h1>
+        <p class="hero-lede">Cada grieta cuenta una historia. Aprende a reconocer señales que necesitan atención y pon a prueba tu criterio en diez casos que cambian de orden en cada partida.</p>
+        <div class="hero-actions">
+          <button class="button button-primary" id="startButton">Comenzar juego <span aria-hidden="true">→</span></button>
+          <button class="button button-quiet" id="tutorialButton">Ver tutorial primero</button>
+        </div>
+        <div class="hero-meta">
+          <span><b>10</b> casos aleatorios</span><i></i><span><b>40</b> puntos por revisar</span><i></i><span><b>10–12 min</b> aprox.</span>
+        </div>
+        <p class="safety-note"><span aria-hidden="true">ⓘ</span> Simulación educativa. La habitabilidad real solo puede determinarse mediante una evaluación técnica.</p>
+      </div>
+      <div class="hero-art" aria-label="Ilustración de una pared con diferentes patrones de grietas">
+        <div class="art-topline"><span>ESTUDIO VISUAL / 001</span><span>NSR-10 · REFERENCIA EDUCATIVA</span></div>
+        <svg class="hero-wall" viewBox="0 0 580 500" role="img" aria-label="Muro ilustrado con una grieta diagonal, una grieta escalonada y una fisura fina">
+          <defs>
+            <linearGradient id="wallGlow" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1c2940"/><stop offset="1" stop-color="#111a2d"/></linearGradient>
+            <pattern id="brickPattern" width="76" height="40" patternUnits="userSpaceOnUse"><path d="M0 0H76 M0 40H76 M38 0V20 M0 20H76 M0 20V40" fill="none" stroke="#29364b" stroke-width="1" opacity=".55"/></pattern>
+          </defs>
+          <rect x="42" y="42" width="496" height="416" rx="12" fill="url(#wallGlow)" stroke="#344057"/>
+          <rect x="67" y="68" width="446" height="356" fill="url(#brickPattern)" opacity=".8"/>
+          <rect x="66" y="68" width="448" height="25" rx="2" fill="#2c394e" stroke="#506078"/>
+          <rect x="66" y="402" width="448" height="25" rx="2" fill="#2c394e" stroke="#506078"/>
+          <rect x="92" y="92" width="22" height="310" fill="#202c40" stroke="#46536a"/>
+          <rect x="466" y="92" width="22" height="310" fill="#202c40" stroke="#46536a"/>
+          <rect x="335" y="153" width="98" height="104" fill="#070b16" stroke="#637087" stroke-width="2"/>
+          <path d="M175 155 L219 220 L190 258 L238 329" fill="none" stroke="#e9a54e" stroke-width="3" stroke-linecap="round"/>
+          <path d="M268 141 L248 177 L263 193 L245 214 L256 237" fill="none" stroke="#dbe0e8" stroke-width="2" stroke-linecap="round"/>
+          <path d="M394 300 L383 317 L388 335 L370 351 L375 372" fill="none" stroke="#e0e4eb" stroke-width="2" stroke-linecap="round"/>
+          <path d="M135 330 L151 342 L145 359 L164 370" fill="none" stroke="#e0e4eb" stroke-width="2" stroke-linecap="round"/>
+          <g font-family="DM Mono, monospace" font-size="11" letter-spacing="1.2" fill="#99a5b8"><text x="74" y="117">M-01</text><text x="440" y="385">DETALLE A</text></g>
+          <g transform="translate(212 244)"><circle r="16" fill="#f3a21a" stroke="#fff" stroke-width="2"/><text text-anchor="middle" y="4" font-size="12" font-weight="700" fill="#10182a">01</text></g>
+          <g transform="translate(255 186)"><circle r="13" fill="#121a2b" stroke="#f3f5fa" stroke-width="1.5"/><text text-anchor="middle" y="4" font-size="10" font-weight="700" fill="#fff">02</text></g>
+          <g transform="translate(386 337)"><circle r="13" fill="#121a2b" stroke="#f3f5fa" stroke-width="1.5"/><text text-anchor="middle" y="4" font-size="10" font-weight="700" fill="#fff">03</text></g>
+          <g transform="translate(151 353)"><circle r="13" fill="#121a2b" stroke="#f3f5fa" stroke-width="1.5"/><text text-anchor="middle" y="4" font-size="10" font-weight="700" fill="#fff">04</text></g>
+        </svg>
+        <div class="art-caption"><span class="caption-line"></span> OBSERVA · COMPARA · DECIDE CON PRUDENCIA</div>
+      </div>
+    </section>
+
+    <section id="screen-tutorial" class="screen hidden" aria-labelledby="tutorial-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">ANTES DE EMPEZAR / GUÍA RÁPIDA</p><h2 id="tutorial-title">Aprende a leer las grietas</h2><p class="section-subtitle">La forma, el lugar y el contexto importan. Ningún patrón aislado confirma por sí solo que un edificio sea seguro o inseguro.</p></div>
+        <span class="step-chip">01 <span>/</span> 02</span>
+      </div>
+      <div class="tutorial-grid">
+        <article class="lesson-card">
+          <div class="lesson-graphic graphic-x"><svg viewBox="0 0 110 76" aria-hidden="true"><path d="M28 10L47 33L35 43L67 67M77 9L64 31L74 43L52 66"/></svg><span class="mini-tag tag-red">SEÑAL DE ALERTA</span></div>
+          <h3>Diagonal en “X”</h3><p>Dos diagonales que se cruzan y atraviesan la mampostería pueden indicar daño por esfuerzo lateral, especialmente tras un sismo.</p>
+        </article>
+        <article class="lesson-card">
+          <div class="lesson-graphic graphic-stair"><svg viewBox="0 0 110 76" aria-hidden="true"><path d="M19 10L19 25L36 25L36 39L53 39L53 53L72 53L72 67L91 67"/></svg><span class="mini-tag tag-red">REQUIERE ATENCIÓN</span></div>
+          <h3>Escalonada en juntas</h3><p>Sigue las líneas de mortero entre ladrillos. Si es extensa, crece o atraviesa el muro, necesita valoración profesional.</p>
+        </article>
+        <article class="lesson-card">
+          <div class="lesson-graphic graphic-corner"><svg viewBox="0 0 110 76" aria-hidden="true"><path d="M35 64V17H80M35 40L52 28L66 8"/></svg><span class="mini-tag tag-yellow">PRECAUCIÓN</span></div>
+          <h3>Desde una esquina</h3><p>Las aberturas concentran tensiones. Una fisura diagonal que nace junto a una puerta o ventana merece revisión, según su tamaño y evolución.</p>
+        </article>
+        <article class="lesson-card">
+          <div class="lesson-graphic graphic-hair"><svg viewBox="0 0 110 76" aria-hidden="true"><path d="M52 8L49 21L53 31L48 42L51 52L46 67"/></svg><span class="mini-tag tag-green">POSIBLEMENTE SUPERFICIAL</span></div>
+          <h3>Fisura fina superficial</h3><p>Puede aparecer en el acabado por retracción o cambios de temperatura. Su aspecto no basta para descartar otros daños.</p>
+        </article>
+        <article class="lesson-card">
+          <div class="lesson-graphic graphic-joint"><svg viewBox="0 0 110 76" aria-hidden="true"><path d="M18 18H92M18 23H45L51 18L58 24H92M34 20V65M79 20V65"/></svg><span class="mini-tag tag-red">SEÑAL DE ALERTA</span></div>
+          <h3>Separación en un encuentro</h3><p>Una abertura entre viga, columna, muro o losa —más aún con desplazamiento— requiere atención técnica rápida.</p>
+        </article>
+        <article class="lesson-card">
+          <div class="lesson-graphic graphic-crush"><svg viewBox="0 0 110 76" aria-hidden="true"><path d="M34 8H77V26L67 31L75 41L65 49L72 66H34Z M34 23L44 30L35 39L45 47L36 58"/></svg><span class="mini-tag tag-red">SEÑAL DE ALERTA</span></div>
+          <h3>Aplastamiento o desprendimiento</h3><p>Concreto desmoronado, material que cae, acero expuesto o elementos deformados son señales para alejarse y reportar.</p>
+        </article>
+      </div>
+      <div class="classification-guide">
+        <div class="classification-intro"><p class="eyebrow">CÓMO JUGAR</p><h3>Elige la respuesta más prudente</h3><p>En cada punto identifica la señal principal. Si hay riesgo inmediato, no te acerques para medir, tocar ni fotografiar la grieta.</p></div>
+        <div class="class-item"><span class="class-dot red"></span><div><b>Rojo · Señal crítica</b><small>Aléjate / evacúa si hay peligro inmediato y reporta a emergencias o autoridades competentes.</small></div></div>
+        <div class="class-item"><span class="class-dot yellow"></span><div><b>Amarillo · Precaución</b><small>Limita el acceso al área y solicita una evaluación técnica pronta.</small></div></div>
+        <div class="class-item"><span class="class-dot green"></span><div><b>Verde · Apariencia superficial</b><small>No se observa una señal crítica en el ejemplo, pero esto no certifica habitabilidad.</small></div></div>
+      </div>
+      <div class="tutorial-footer"><p class="safety-note"><span aria-hidden="true">ⓘ</span> Si una grieta apareció tras un sismo, aumenta, tiene desplazamiento o se acompaña de ruidos, inclinación o caída de material, abandona el área si hacerlo es seguro y pide ayuda profesional.</p><button class="button button-primary" id="beginLevelButton">Iniciar recorrido aleatorio <span aria-hidden="true">→</span></button></div>
+    </section>
+
+    <section id="screen-game" class="screen hidden" aria-labelledby="game-title">
+      <div class="section-heading game-heading">
+        <div><p class="eyebrow" id="levelEyebrow">CASO 01 / CASA DE UN PISO</p><h2 id="game-title">¿Qué te dice este muro?</h2><p class="section-subtitle">Resuelve los cuatro puntos de cada caso. El orden de los diez escenarios cambia en cada partida.</p></div>
+        <div class="level-progress-wrap"><span id="levelName">CASO 01 · 1/10</span><div class="level-progress"><span id="levelProgressBar"></span></div><span id="examinedCount">0 / 4 REVISADOS</span></div>
+      </div>
+      <div class="game-layout">
+        <section class="diagram-panel" aria-label="Esquema interactivo de daños">
+          <div class="panel-topline"><span>ESQUEMA DE MURO Y ELEMENTOS</span><span class="panel-code" id="diagramCode">MURO / A-01</span></div>
+          <div class="diagram-stage">
+            <svg id="sceneSvg" viewBox="0 0 800 560" role="group" aria-label="Muro con cuatro puntos interactivos"></svg>
+          </div>
+          <div class="diagram-bottom"><div class="legend"><span><i class="legend-dot red"></i> Crítico</span><span><i class="legend-dot yellow"></i> Precaución</span><span><i class="legend-dot green"></i> Superficial aparente</span></div><button class="text-button" id="restartLevelButton">Reiniciar nivel ↻</button></div>
+        </section>
+        <aside class="decision-column">
+          <section class="decision-card" aria-live="polite">
+            <div class="decision-top"><span class="pill" id="decisionPill">SELECCIONA UN PUNTO</span><span class="hotspot-code" id="hotspotCode">PUNTO #--</span></div>
+            <div id="emptyState"><h3>Haz clic en los números 1, 2, 3 o 4</h3><p class="decision-description">Observa la dirección, extensión y ubicación de cada grieta. Después elige la clasificación que consideres más prudente.</p><div class="tip-box"><span class="tip-icon">ⓘ</span><p><b>Consejo:</b> No tapes una grieta recién aparecida sin evaluar antes su origen, evolución y contexto.</p></div></div>
+            <div id="selectedState" class="hidden"><h3 id="crackTitle"></h3><p class="decision-description" id="crackObservation"></p><div class="clue-box"><span class="clue-label">PISTA DE OBSERVACIÓN</span><p id="crackClue"></p></div><p class="choice-label">¿Cómo clasificarías esta señal?</p><div class="choice-grid"><button class="choice-button choice-red" data-choice="red"><span>●</span><b>Rojo</b><small>Señal crítica</small></button><button class="choice-button choice-yellow" data-choice="yellow"><span>●</span><b>Amarillo</b><small>Precaución</small></button><button class="choice-button choice-green" data-choice="green"><span>●</span><b>Verde</b><small>Superficial</small></button></div><div id="answerFeedback" class="answer-feedback hidden"></div></div>
+            <div id="completedPointState" class="hidden"><div class="completed-icon">✓</div><h3>Punto revisado</h3><p class="decision-description">Ya clasificaste esta señal. Puedes seleccionar otro número para continuar.</p><div id="completedAnswer" class="completed-answer"></div></div>
+          </section>
+          <div class="level-bottom-card"><div><span class="small-label">AVANCE DEL NIVEL</span><strong><span id="rightCount">0</span><small> / 4 aciertos</small></strong></div><button class="button button-primary button-next hidden" id="advanceButton">Ver resultado <span aria-hidden="true">→</span></button><p id="advanceHint">Revisa y clasifica todos los puntos para continuar.</p></div>
+        </aside>
+      </div>
+      <p class="in-game-disclaimer">Este escenario simplifica situaciones reales: la severidad depende del sistema constructivo, el tamaño, la ubicación, la evolución y otros daños. El juego no reemplaza una inspección profesional.</p>
+    </section>
+
+    <section id="screen-results" class="screen hidden" aria-labelledby="result-title">
+      <div class="result-wrap">
+        <p class="eyebrow">RECORRIDO COMPLETADO</p><div class="result-mark" id="resultMark">✓</div><h2 id="result-title">Buen trabajo observando</h2><p class="result-lede" id="resultLede">Has completado los diez casos aleatorios y ya puedes revisar cada decisión.</p>
+        <div class="result-stats"><div><strong id="finalScore">0/40</strong><span>PUNTOS CORRECTOS</span></div><div><strong id="finalPercent">0%</strong><span>PRECISIÓN</span></div><div><strong id="finalCaseCount">10</strong><span>CASOS COMPLETADOS</span></div></div>
+        <section class="mistake-review" aria-labelledby="reportTitle">
+          <div class="report-heading"><div><p class="eyebrow">REVISIÓN DEL APRENDIZAJE</p><h3 id="reportTitle">¿En qué te equivocaste?</h3><p class="report-summary" id="reportSummary">Aquí aparecerán tus aciertos y las señales que conviene repasar.</p></div><span class="mistake-counter"><b id="mistakeCount">0</b><small>errores</small></span></div>
+          <div class="report-filters"><button class="report-filter is-active" type="button" id="reportFilterAll">Todos los casos</button><button class="report-filter" type="button" id="reportFilterMistakes">Solo mis errores</button></div>
+          <div class="level-report" id="levelReport" aria-live="polite"></div>
+        </section>
+        <div class="result-message"><span class="tip-icon">ⓘ</span><p><b>Qué debes recordar:</b> una grieta no se interpreta por su forma únicamente. Si hay duda, cambios recientes o señales de daño importante, prioriza la seguridad y solicita una evaluación profesional.</p></div>
+        <div class="hero-actions result-actions"><button class="button button-primary" id="playAgainButton">Volver a jugar ↻</button><button class="button button-quiet" id="reviewTutorialButton">Repasar el tutorial</button></div>
+        <p class="sources-line">Referencia visual general: <a href="https://www.minvivienda.gov.co/normativa/decreto-0926-2010" target="_blank" rel="noopener noreferrer">NSR-10 · MinVivienda</a> · <a href="https://www.fema.gov/pdf/emergency/usr/module1c.pdf" target="_blank" rel="noopener noreferrer">FEMA · Cracks in Concrete & Masonry</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><span>CASA/SEGURA <span class="footer-separator">·</span> APRENDER PARA PREVENIR</span><span>Material de sensibilización, no diagnóstico estructural.</span></footer>
+  <script src="game.js"></script>
+</body>
+</html>
