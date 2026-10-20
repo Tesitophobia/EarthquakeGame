@@ -1,15 +1,5 @@
 CASA/SEGURA — Minijuego didáctico
 
-CONTENIDO
-- index.html: estructura y pantallas del juego.
-- styles.css: diseño responsive para PC, tablet y celular.
-- game.js: diez casos, diagramas, orden aleatorio, decisiones y resultados.
-
-CÓMO ABRIRLO
-1. Descarga y descomprime el paquete.
-2. Abre index.html en un navegador actualizado.
-3. Pulsa “Comenzar juego”, consulta el tutorial y empieza el recorrido aleatorio.
-
 CARACTERÍSTICAS
 - Inicio y tutorial visual con seis patrones de fisuras y grietas.
 - Diez escenarios que se mezclan al iniciar cada partida. El número de caso original se conserva para que el jugador vea, por ejemplo, el caso 10 en el primer turno.
